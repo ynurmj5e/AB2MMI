@@ -7,9 +7,23 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <AddressBook/AddressBook.h>
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
+{
+    ABAddressBook *adBook;
+    NSArray *groups;
+    NSMutableArray *gNames;
+}
+
+- (NSArray *)labelToType:(NSString *)label;
 
 @property (assign) IBOutlet NSWindow *window;
+@property (strong) IBOutlet NSComboBox *cmbBox;
+@property (strong) IBOutlet NSTextView *txtView;
+
+- (IBAction)Show_Push:(id)sender;
+- (IBAction)Write_Push:(id)sender;
+- (IBAction)Clear_Push:(id)sender;
 
 @end
